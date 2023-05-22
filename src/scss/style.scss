@@ -26,6 +26,7 @@ body, html{
 	font-family: raleway_m, sans-serif;
 	overflow: hidden;
 	line-height: 1.8;
+	position: relative;
 }
 
 .swiper-slide{
@@ -36,18 +37,17 @@ body, html{
 .slider{
 	width: 100%;
 	transform: rotate(15deg);
-	// removed slide limits
 	overflow: visible;
 	top: 10vh;
 
-// What's in the background
+// Блюр на заднем фоне
 	&_big{
 		z-index: 0;
 		transform: rotate(-20deg) !important;
 		top: -90vh;
 		left: -10vh;
 		opacity: 0.15;
-		filter: saturate(100) blur(100px);
+		filter: blur(120px) saturate(10);
 
 		.slider__item{
 				max-height: 100vh;
@@ -55,7 +55,6 @@ body, html{
 	}
 
 	&__wrapper{
-		// CSS Easing / Cubic-Bezier Generator
 		transition: $animationTransition !important;
 		will-change: transform;
 	}
@@ -64,6 +63,13 @@ body, html{
 		max-height: 75vh;
 		overflow: hidden;
 		cursor: pointer;
+		transition: transform $animationTransition, box-shadow $animationTransition;
+
+		&.extendedSlide{
+			z-index: 2;
+			transform: rotate(-15deg) scale(1.5);
+			box-shadow: rgb(0 0 0 / .75) 0 0 0 10000px;
+		}
 	}
 
 	&__images{
@@ -74,5 +80,41 @@ body, html{
 		left: -100%;
 		transition: $animationTransition !important;
 		will-change: transform;
+	}
+}
+
+.synopsis{
+	position: absolute;
+	font-size: calc($sizeIndex * .8);
+	top: 20vh;
+	left: 8vw;
+	max-width: 26vw;
+	opacity: .9;
+	transition: opacity $animationTransition, transform $animationTransition;
+	
+
+	&__logo{
+		font-size: calc($sizeIndex * 5);
+		font-weight: 900;
+		display: inline-block;
+		background: linear-gradient(40deg, rgb(0, 0, 0), rgb(255, 255, 255), rgb(255, 238, 2));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	&__text{
+		opacity: 9;
+		transition: $animationTransition !important;
+		transition-duration: 5s;
+	}
+
+	&.pinch{
+		opacity: 0.1;
+		transform: translateY(5vh);
+
+		& .synopsis__text{
+			transform: translateY(15vh);
+		}
+
 	}
 }

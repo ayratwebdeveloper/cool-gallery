@@ -24,7 +24,7 @@ body, html{
 	background-color: $blackBackground;
 	color: $colorOfAllElements;
 	font-family: raleway_m, sans-serif;
-	overflow: visible;
+	overflow: hidden;
 	line-height: 1.8;
 }
 
@@ -46,9 +46,9 @@ body, html{
 		transform: rotate(-20deg) !important;
 		top: -90vh;
 		left: -10vh;
-		opacity: 0.10;
+		opacity: 0.15;
 		filter: saturate(100) blur(100px);
-		
+
 		.slider__item{
 				max-height: 100vh;
 		}
@@ -71,7 +71,7 @@ body, html{
 		height: 100%;
 		background-size: cover;
 		position: absolute;
-		left: -100vh;
+		left: -100%;
 		transition: $animationTransition !important;
 		will-change: transform;
 	}

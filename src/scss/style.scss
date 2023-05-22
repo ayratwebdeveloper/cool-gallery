@@ -30,16 +30,8 @@ body, html{
 
 .swiper-slide{
 	width: 100vh;
-	height: 100vh;
+	height: 10000vh;
 }
-
-// .slider{
-// 	width: 100%;
-// 	transform: rotate(15deg);
-// 	// removed slide limits
-// 	overflow: visible;
-// 	top: 10vh;
-// }
 
 .slider{
 	width: 100%;
@@ -48,9 +40,6 @@ body, html{
 	overflow: visible;
 	top: 10vh;
 
-	// &_main{
-		
-	// }
 // What's in the background
 	&_big{
 		z-index: 0;
@@ -58,7 +47,11 @@ body, html{
 		top: -90vh;
 		left: -10vh;
 		opacity: 0.10;
-		filter: saturate(10);
+		filter: saturate(100) blur(100px);
+		
+		.slider__item{
+				max-height: 100vh;
+		}
 	}
 
 	&__wrapper{

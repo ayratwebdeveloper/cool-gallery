@@ -1,3 +1,4 @@
 $blackBackground:#070707;
 $colorOfAllElements:#fff;
-$sizeIndex: calc(1vw + 1vh)
+$sizeIndex: calc(1vw + 1vh);
+$animationTransition: 0.25s cubic-bezier(0.2, 0.6, 0.4, 0.9); /*CSS Easing / Cubic-Bezier Generator */

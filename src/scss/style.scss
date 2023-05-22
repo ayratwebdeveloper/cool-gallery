@@ -24,6 +24,62 @@ body, html{
 	background-color: $blackBackground;
 	color: $colorOfAllElements;
 	font-family: raleway_m, sans-serif;
-	overflow: hidden;
+	overflow: visible;
 	line-height: 1.8;
+}
+
+.swiper-slide{
+	width: 100vh;
+	height: 100vh;
+}
+
+// .slider{
+// 	width: 100%;
+// 	transform: rotate(15deg);
+// 	// removed slide limits
+// 	overflow: visible;
+// 	top: 10vh;
+// }
+
+.slider{
+	width: 100%;
+	transform: rotate(15deg);
+	// removed slide limits
+	overflow: visible;
+	top: 10vh;
+
+	// &_main{
+		
+	// }
+// What's in the background
+	&_big{
+		z-index: 0;
+		transform: rotate(-20deg) !important;
+		top: -90vh;
+		left: -10vh;
+		opacity: 0.10;
+		filter: saturate(10);
+	}
+
+	&__wrapper{
+		// CSS Easing / Cubic-Bezier Generator
+		transition: $animationTransition !important;
+		will-change: transform;
+	}
+
+	&__item{
+		max-height: 75vh;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	&__images{
+		width: 300%;
+		height: 100%;
+		background-size: cover;
+		position: absolute;
+		left: -100vh;
+		transition: $animationTransition !important;
+		will-change: transform;
+	}
 }

@@ -1,6 +1,9 @@
 const sliderMain = new Swiper('.slider_main', {
 	freeMode: true,
 	centeredSlides: true,
+	parallax: true,
+	// mouse scrolling
+	mousewheel: true,
 	// screen size adaptation
 	breakpoints: {
 		0 :{
@@ -14,3 +17,12 @@ const sliderMain = new Swiper('.slider_main', {
 		}
 	}
 })
+
+const sliderBig = new Swiper('.slider_big', {
+	centeredSlides: true,
+	parallax: true,
+	spaceBetween: 60,
+	slidesPerView: 3.5,
+})
+
+sliderMain.controller.control = sliderBig

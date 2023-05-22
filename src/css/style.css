@@ -1,3 +1,4 @@
+/*CSS Easing / Cubic-Bezier Generator */
 @font-face {
   font-family: raleway_m;
   src: url(../fonts/raleway-v22-cyrillic-300.woff2);
@@ -20,6 +21,44 @@ body, html {
   background-color: #070707;
   color: #fff;
   font-family: raleway_m, sans-serif;
-  overflow: hidden;
+  overflow: visible;
   line-height: 1.8;
+}
+
+.swiper-slide {
+  width: 100vh;
+  height: 100vh;
+}
+
+.slider {
+  width: 100%;
+  transform: rotate(15deg);
+  overflow: visible;
+  top: 10vh;
+}
+.slider_big {
+  z-index: 0;
+  transform: rotate(-20deg) !important;
+  top: -90vh;
+  left: -10vh;
+  opacity: 0.1;
+  filter: saturate(10);
+}
+.slider__wrapper {
+  transition: 0.25s cubic-bezier(0.2, 0.6, 0.4, 0.9) !important;
+  will-change: transform;
+}
+.slider__item {
+  max-height: 75vh;
+  overflow: hidden;
+  cursor: pointer;
+}
+.slider__images {
+  width: 300%;
+  height: 100%;
+  background-size: cover;
+  position: absolute;
+  left: -100vh;
+  transition: 0.25s cubic-bezier(0.2, 0.6, 0.4, 0.9) !important;
+  will-change: transform;
 }/*# sourceMappingURL=style.css.map */
